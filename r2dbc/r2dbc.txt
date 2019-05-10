@@ -1,0 +1,49 @@
+2019-05-10 08:32:34.352  INFO 69904 --- [ctor-http-nio-2] com.trendyol.hermes.r2dbc.Controller     : RD2BC data fetch started thread:reactor-http-nio-2 43
+2019-05-10 08:32:34.352  WARN 69904 --- [ctor-tcp-nio-24] io.netty.channel.DefaultChannelPipeline  : An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+
+io.netty.channel.ChannelPipelineException: reactor.netty.channel.ChannelOperationsHandler.handlerRemoved() has thrown an exception.
+	at io.netty.channel.DefaultChannelPipeline.callHandlerRemoved0(DefaultChannelPipeline.java:641) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.DefaultChannelPipeline.destroyDown(DefaultChannelPipeline.java:887) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.DefaultChannelPipeline.destroyUp(DefaultChannelPipeline.java:853) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.DefaultChannelPipeline.destroy(DefaultChannelPipeline.java:845) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.DefaultChannelPipeline.access$700(DefaultChannelPipeline.java:46) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelUnregistered(DefaultChannelPipeline.java:1390) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelUnregistered(AbstractChannelHandlerContext.java:178) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelUnregistered(AbstractChannelHandlerContext.java:164) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelUnregistered(DefaultChannelPipeline.java:830) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$8.run(AbstractChannel.java:835) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:163) [netty-common-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java) [netty-common-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404) [netty-common-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:495) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:905) [netty-common-4.1.34.Final.jar:4.1.34.Final]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_171]
+Caused by: reactor.core.Exceptions$ErrorCallbackNotImplemented: reactor.netty.channel.AbortedException: Connection has been closed
+Caused by: reactor.netty.channel.AbortedException: Connection has been closed
+	at reactor.netty.channel.ChannelOperationsHandler.discard(ChannelOperationsHandler.java:356) ~[reactor-netty-0.8.6.RELEASE.jar:0.8.6.RELEASE]
+	at reactor.netty.channel.ChannelOperationsHandler.drain(ChannelOperationsHandler.java:366) ~[reactor-netty-0.8.6.RELEASE.jar:0.8.6.RELEASE]
+	at reactor.netty.channel.ChannelOperationsHandler.handlerRemoved(ChannelOperationsHandler.java:210) ~[reactor-netty-0.8.6.RELEASE.jar:0.8.6.RELEASE]
+	at io.netty.channel.AbstractChannelHandlerContext.callHandlerRemoved(AbstractChannelHandlerContext.java:961) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.DefaultChannelPipeline.callHandlerRemoved0(DefaultChannelPipeline.java:638) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.DefaultChannelPipeline.destroyDown(DefaultChannelPipeline.java:887) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.DefaultChannelPipeline.destroyUp(DefaultChannelPipeline.java:853) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.DefaultChannelPipeline.destroy(DefaultChannelPipeline.java:845) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.DefaultChannelPipeline.access$700(DefaultChannelPipeline.java:46) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelUnregistered(DefaultChannelPipeline.java:1390) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelUnregistered(AbstractChannelHandlerContext.java:178) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelUnregistered(AbstractChannelHandlerContext.java:164) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelUnregistered(DefaultChannelPipeline.java:830) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$8.run(AbstractChannel.java:835) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:163) [netty-common-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java) [netty-common-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404) [netty-common-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:495) [netty-transport-4.1.34.Final.jar:4.1.34.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:905) [netty-common-4.1.34.Final.jar:4.1.34.Final]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_171]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Assembly trace from producer [reactor.core.publisher.FluxConcatMap] :
+	reactor.core.publisher.Flux.concatMap(Flux.java:3445)
+	io.r2dbc.postgresql.client.ReactorNettyClient.<init>(ReactorNettyClient.java:158)
+Error has been observed by the following operator(s):
+	|_	Flux.concatMap ⇢ io.r2dbc.postgresql.client.ReactorNettyClient.<init>(ReactorNettyClient.java:158)
+
