@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: default
+  application:
+    name: Blocking IO Spring Boot
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      connection-test-query: SELECT 1
+      minimum-idle: 5
+      maximum-pool-size: 30
+      auto-commit: true
+      connection-timeout: 10000
+      username: postgres
+      password: pg
+    url: jdbc:postgresql://localhost:5433/hermes-address
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+logging:
+  level:
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+server:
+  port: 9494
