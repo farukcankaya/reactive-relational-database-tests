@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/api")
@@ -16,12 +17,15 @@ import reactor.core.publisher.Flux;
 public class Controller {
     
     private final AddressRepository repository;
+    private final CityRepository cityRepository;
     private final JDBCDao jdbcDao;
     private final ReactorExtension reactorService;
     
-    public Controller(AddressRepository repository, JDBCDao jdbcDao,
+    public Controller(AddressRepository repository,
+        CityRepository cityRepository, JDBCDao jdbcDao,
         ReactorService reactorService) {
         this.repository = repository;
+        this.cityRepository = cityRepository;
         this.jdbcDao = jdbcDao;
         this.reactorService = reactorService;
     }
@@ -32,6 +36,14 @@ public class Controller {
             Thread.currentThread().getId());
         
         return Flux.fromIterable(repository.findLast());
+    }
+    
+    @GetMapping("/jpa-city")
+    public Mono<City> jpaCity() {
+        log.info("jpa data fetch started thread:{} {}", Thread.currentThread().getName(),
+            Thread.currentThread().getId());
+        
+        return Mono.justOrEmpty(cityRepository.findById(1L));
     }
     
     @GetMapping("/jdbc")
